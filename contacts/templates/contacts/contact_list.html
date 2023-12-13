@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="{% url 'contact_new' %}">Create a New Contact</a>
+    <ul>
+        {% for contact in contacts %}
+            <li>
+                {{ contact.name }} - {{ contact.email }} - {{ contact.created_time }}
+                <a href="{% url 'contact_detail' contact.pk %}">Details</a>
+                <a href="{% url 'contact_update' contact.pk %}">Edit</a>
+                <a href="{% url 'contact_delete' contact.pk %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No contacts found.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

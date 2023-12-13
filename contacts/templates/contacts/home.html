@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="text-align: center;">
+    <h1>Welcome to the Contact Management System</h1>
+    <p>This is the homepage of your application.</p>
+    <a href="{% url 'contact_list' %}">View Contacts</a>
+</div>
+{% endblock %}
